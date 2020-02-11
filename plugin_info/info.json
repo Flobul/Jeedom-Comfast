@@ -1,0 +1,16 @@
+{
+    "id" : "comfast",
+    "name" : "Comfast",
+    "licence" : "AGPL",
+    "author" : "Flobul",
+    "require" : "4.0",
+    "category" : "communication",
+    "description" : "Plugin permettant de gérer les répéteurs Comfast.",
+    "hasDependency" : false,
+    "hasOwnDeamon" : false,
+    "maxDependancyInstallTime" : 0,
+    "changelog" : "https://flobul.github.io/Jeedom-Comfast/#language#/changelog",
+    "documentation" : "https://flobul.github.io/Jeedom-Comfast/#language#/",
+    "language" : ["fr_FR","en_US","es_ES"],
+    "compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"]
+}
