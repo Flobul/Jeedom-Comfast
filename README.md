@@ -1,20 +1,20 @@
 # Plugin routeur Tenda AC pour Jeedom
 
-<img src="plugin_info/tendaac_icon.png" align="right" height="160" width="150">
+<img src="../images/comfast_icon.png" align="right" height="160" width="150">
 
-Plugin permettant de gérer les routeurs Tenda AC.
+Plugin permettant de gérer les routeurs Comfast.
 
 
 ### Documentation
 
-Vous trouverez la documentation [ici](https://github.com/Flobul/Jeedom-TendaAC/tree/master/docs/fr_FR/index.md)
+Vous trouverez la documentation [ici](https://github.com/Flobul/Jeedom-Comfast/tree/master/docs/fr_FR/index.md)
 
 
 ### Prévisualisation
 
-<img src="docs/images/tendaac_screenshot1.png" align="center">
+<img src="docs/images/comfast_screenshot1.png" align="center">
 
-<img src="docs/images/tendaac_screenshot2.png" align="center">
+<img src="docs/images/comfast_screenshot2.png" align="center">
 
 
 ### Fonctions disponibles
@@ -22,9 +22,12 @@ Vous trouverez la documentation [ici](https://github.com/Flobul/Jeedom-TendaAC/t
 Infos :
 * Etat du routeur
 * Etat du Wifi
+* Etat des LED
 * Nom du routeur
 * Nom des SSiD WiFi
 * Version de firmware
+* Type de CPU
+* Charge système et mémoire
 
 Actions :
 * Reboot
