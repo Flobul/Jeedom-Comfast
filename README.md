@@ -1,6 +1,6 @@
 # Plugin routeur Tenda AC pour Jeedom
 
-<img src="../images/comfast_icon.png" align="right" height="160" width="150">
+<img src="docs/images/comfast_icon.png" align="right" height="160" width="150">
 
 Plugin permettant de gérer les routeurs Comfast.
 
