@@ -1,20 +1,20 @@
 Présentation
 ============
 
-![Logo plugin](../images/tendaac_icon.png "Logo plugin")
+![Logo plugin](../images/comfast_icon.png "Logo plugin")
 
-Ce plugin permet de gérer les routeurs Tenda AC.
+Ce plugin permet de gérer les répéteurs Comfast.
 
-Il permet de redémarrer le routeur et de sauvegarder sa configuration.
+Il permet de redémarrer le répéteur et de sauvegarder sa configuration.
 
 Installation/Paramétrage
 ========================
 
-Nous allons maintenant paramétrer un équipement. Pour se faire, cliquez sur *''Plugins / Communication / Tenda AC''
+Nous allons maintenant paramétrer un équipement. Pour se faire, cliquez sur *''Plugins / Communication / Comfast''
 
 Puis cliquez sur le bouton en haut à gauche "*''Ajouter un équipement*''"
 
-Puis saisir le nom de l'équipement (ex. Tenda AC1200)
+Puis saisir le nom de l'équipement (ex. Comfast WR753AC)
 
 Puis définir :
 
@@ -32,7 +32,10 @@ Puis définir :
 
 -   *''Rafraichissement*''(par défaut sur 1 heure)
 
-![Page de configuration](../images/tendaac_screenshot1.png "Page de configuration")
+![Page de configuration](../images/comfast_screenshot1.png "Page de configuration")
+
+![Page Santé](../images/comfast_screenshot2.png "Page Santé")
+
 
 Dashboard
 ===
@@ -55,7 +58,7 @@ Il est nécessaire au préalable d’activer temporairement le debug de Jeedom (
 ### J'aimerais remonter des erreurs/modifications directement dans le code ?
 -----------------------------------------------------------------------
 C’est tout à fait possible via
-[github](https://github.com/Flobul/Jeedom-TendaAC/)
+[github](https://github.com/Flobul/Jeedom-Comfast/)
 
 ### Liste des versions
 
