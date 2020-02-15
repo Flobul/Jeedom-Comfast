@@ -4,6 +4,7 @@
     "licence" : "AGPL",
     "author" : "Flobul",
     "require" : "4.0",
+    "version" : "1.0",
     "category" : "communication",
     "description" : "Plugin permettant de gérer les répéteurs Comfast.",
     "hasDependency" : false,
