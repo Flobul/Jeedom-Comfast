@@ -1,14 +1,14 @@
 {
-    "plugins\/tendaac\/desktop\/php\/tendaac.php": {
-        "Ajouter un routeur": "Add a device",
-        "Rechercher": "Search",
+    "plugins\/comfast\/desktop\/php\/comfast.php": {
+        "Gestion": "Management",
+        "Ajouter": "Add",
         "Configuration": "Configuration",
         "Santé": "Health",
-        "Mes routeurs Tenda": "My routeurs",
-        "Vous n\\'avez pas encore de routeur Tenda, cliquez sur Ajouter un équipement pour commencer": "You have no router yet, click Add a device to start",
+        "Mes répéteurs Comfast": "My Comfast repeater",
+        "Configuration avancée": "Advanced configuration",
+        "Dupliquer": "Duplicate",
         "Sauvegarder": "Save",
         "Supprimer": "Delete",
-        "Configuration avancée": "Advanced configuration",
         "Equipement": "Equipment",
         "Commandes": "Commands",
         "Général": "Main",
@@ -19,9 +19,11 @@
         "Activer": "Activate",
         "Visible": "Visible",
         "Accéder à la page web": "Access the web page",
-        "IP du routeur Tenda": "Router IP",
-        "Mot de passe du routeur Tenda": "Router password",
+        "IP du routeur Comfast": "Router IP",
+        "Mot de passe du répéteur Comfast": "Repeater password",
+        "Saisissez le mot de passe d'accès au répéteur.\nLaisse le champ vide si vous n'avez pas de mot de passe.": "Enter repeater password, leave it empty if there is not.",
         "Rafraîchissement des informations": "Refresh interval",
+        "Réception des informations à intervalle selectionné.\n  La commande est envoyée toutes les minutes, 5 minutes, 10 minutes, 15 minutes, 30 minutes...": "Information received at selected interval.\n The command is sent every minute, 5 minutes, 10 minutes, 15 minutes, 30 minutes ...",
         "Non": "No",
         "Toutes les minutes": "Every minutes",
         "Toutes les 5 minutes": "Every 5 minutes",
@@ -40,39 +42,38 @@
         "Sous-Type": "Subtype",
         "Valeur": "Value",
         "Unité": "Unit",
-        "Paramètres": "Settings",
-        "Gestion": "Management"
+        "Colorisation des valeurs": "Value colorization",
+        "Paramètres": "Settings"
     },
-    "plugins\/tendaac\/desktop\/js\/tendaac.js": {
-        "Nom": "Name",
-        "Calcul": "Calculation",
-        "Min": "Min",
-        "Max": "Max",
-        "Historiser": "Historize",
-        "Afficher": "Display",
-        "Tester": "Test",
-        "Accéder à l\\'interface du routeur": "Access router interface",
-        "Santé Tenda AC": "Health Tenda AC",
-        "Télécharger la sauvegarde": "Download the backup",
-        "Suppression en cours": "Deleting",
-        "Supprimer la sauvegarde": "Delete the backup",
-        "Êtes-vous sûr de vouloir supprimer la sauvegarde suivante :": "Are you sure you want to delete this backup :",
-        "Une fois lancée, cette opération ne peut être annulée.": "However this action cannot be reversed."
+    "plugins\/comfast\/core\/class\/comfast.class.php": {
+        "Fichier de config créé : ": "Configuration file created: ",
+        "Code d'erreur (OK) : ": "Error code (OK): ",
+        ", Message : ": ", Message: ",
+        "URL JSON : ": "JSON URL: ",
+        "Retour JSON : ": "Return JSON: ",
+        "j ": "d ",
+        "h ": "h ",
+        "min ": "min ",
+        "s": "s",
+        "Format time : ": "Format time : ",
+        "Point d\\'accès": "Access point",
+        "Scan CRON selectionné": "Scan CRON selected",
+        "Backup config": "Config backup"
     },
-    "plugins\/tendaac\/core\/class\/tendaac.class.php": {
-        "Le routeur Tenda ne repond pas ou le compte est incorrect.": "The Tenda access point is not responding or the credentials are incorrect.",
-        "Le routeur Tenda ne repond pas.": "Tenda router does not responds.",
-        "Equipement desactivé impossible d\\'éxecuter la commande": "Can not execute command while the device is deactivated"
-    },
-    "plugins\/tendaac\/desktop\/modal\/health.js": {
+    "plugins\/comfast\/desktop\/modal\/health.php": {
+        "Rafraîchir": "Refresh",
+        "Santé Comfast": "Health Comfast",
         "Module": "Module",
         "ID": "ID",
         "IP": "IP",
-        "Status": "Status",
+        "Statut": "Status",
         "WiFi": "WiFi",
+        "Charge système et mémoire": "System load and memory",
+        "Temps dactivité": "Activity time",
         "Dernière communication": "Last communication",
         "Date de création": "Creation date",
-        "Présent": "Present",
-        "Absent": "Absent"
+        "OK": "OK",
+        "Activé": "Activated",
+        "CPU : ": "CPU: "
     }
 }

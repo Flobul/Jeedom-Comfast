@@ -30,9 +30,8 @@ try {
 		$arr = ajax::success(comfast::checkRemoveFile(init('url')));
 		$return['cmd'] = array();
 		foreach ($arr as $cmd) {
-      log::add('comfast', 'debug', "Erreur checkRemoveFile : ".$cmd);
-      $return['cmd'][] = $cmd;
-    }
+			$return['cmd'][] = $cmd;
+		}
     ajax::success($return);
   }
 
@@ -40,15 +39,15 @@ try {
 		$eqLogics = eqLogic::byType('comfast');
 		foreach ($eqLogics as $eqLogic) {
 			if ($eqLogic->getId() == init('id')) {
-			$backup = $eqLogic->getCmd(null, 'backup');
-			$backup->execCmd();
-			log::add('comfast','debug','Lancement backup par page accueil');
+				$backup = $eqLogic->getCmd(null, 'backup');
+				$backup->execCmd();
+				log::add('comfast','debug','{{Lancement backup par page accueil}}');
 			}
 		}
 		ajax::success($return);
 	}
 
-  throw new Exception('Aucune methode correspondante');
+  throw new Exception(__('Aucune methode correspondante', __FILE__));
 	/*     * *********Catch exeption*************** */
 } catch (Exception $e) {
 	ajax::error(displayExeption($e), $e->getCode());

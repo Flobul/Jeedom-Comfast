@@ -1,0 +1,116 @@
+<div id="plugin_container" class="eqLogic-widget eqLogic allowResize" style="width:#width#;height:#height#;border:#border#;border-radius:#border-radius#;background-color: #background-color#;color: #color#; #style#" data-category="" data-eqLogic_id="#id#" data-version="#version#" >
+   <center class="widget-name"><strong><a href="#eqLink#" style="font-size : 1.1em;#hideEqLogicName#">#name_display#</strong></a>
+	<span style="font-size: 0.85em;display:none;">#object_name#</span></a></span>
+		<span title="{{Redémarrer l'équipement}}" class="reboot tooltips" data-type="action" data-subtype="other" data-cmd_id="#cmd_reboot_id#" style="float: right">
+			<a class="action" style="cursor: pointer;"><i class="fas fa-sync" style="font-size : 1.0em;padding-right:10px"></i></a>
+		<script>
+		$('.reboot[data-cmd_id=#cmd_reboot_id#] .action').on('click', function() {
+			bootbox.confirm('Êtes-vous sûr de vouloir redémarrer l\'équipement #name# ?', function (result) {
+				if (result) {
+					jeedom.cmd.execute({id: '#cmd_reboot_id#'});
+				}
+			});
+		});
+		</script>
+		</span>
+	<span id="ledstatus#id#" style="float: right;width:20px"></span>
+		<script>
+			if ('#ledstatus#' == 'on') {
+				$('#ledstatus#id#').append('<i title="Voyants allumés" class="fas fa-spinner" style="font-size : 1.1em;color:#0000FF" ></i>');
+			}
+			if ('#ledstatus#' == 'off') {
+				$('#ledstatus#id#').append('<i title="Voyants éteints" class="far fa-circle" style="font-size : 1.1em;"></i>');
+			}
+		</script>
+		<span id="wifistatus#id#" style="float: right;width:20px"></span>
+		<script>
+			if ('#wifistatus#' == '1') {
+				$('#wifistatus#id#').append('<i title="WiFi activé" class="fas fa-rss icon" style="font-size : 1.1em;color:#00FF00" ></i>');
+			}
+			if ('#wifistatus#' == '0') {
+				$('#wifistatus#id#').append('<i title="WiFi  désactivé" class="fas fa-rss icon" style="font-size : 1.1em;color: #FF0000;"></i>');
+			}
+		</script>
+		<span id="iconActive#id#" style="float: right;width:20px"></span>
+		<script>
+			if ('#status#' == '1') {
+				$('#iconActive#id#').append('<i title="Répéteur OK" class="fa fa-check tooltips" style="font-size : 1.1em;color: #00FF00;" ></i>');
+			}
+			if ('#status#' == '0') {
+				$('#iconActive#id#').append('<i title="Répéteur injoignable" class="fa fa-times tooltips" style="font-size : 1.1em;color: #FF0000;"></i>');
+			}
+		</script>
+	</center>
+
+	<div class="state tooltips" data-cmd_id="#routernameid#" style="margin-left:5px;display: #routername_display#;">
+			<span title="Distribution Linux" class="fab fa-linux" style="min-width:15px"></span>
+			<span>#routername#</span>
+	</div>
+	<div class="state tooltips" data-cmd_id="#softversionid#" style="margin-left:5px;display: #softversion_display#;">
+			<span title="Version du firmware" class="fas fa-terminal" style="min-width:15px;"></span>
+			<span id="softversion#id#"></span>
+	</div>
+	<script>
+		if ('#status#' == '1' || '#status#' == '0') {
+			$('#softversion#id#').append('<span>#softversion#</span>');
+		}
+    </script>
+	<div class="state tooltips" data-cmd_id="#uptimeid#" style="margin-left:5px;display: #uptime_display#;">
+			<span title="Temps d'activité (uptime)" class="fas fa-tachometer-alt" style="min-width:15px;"></span>
+			<span id="uptime#id#"></span>
+	</div>
+	<script>
+		if ('#status#' == '1' || '#status#' == '0') {
+			$('#uptime#id#').append('<span>#uptime#</span>');
+		}
+    </script>
+	<div class="state tooltips" style="margin-left:5px;display: #chargecpu_display#;">
+			<span title="Charge système et mémoire" class="fa techno-courbes3" style="width:15px;"></span>
+			<span id="chargecpu#id#"></span><span id="memoire#id#"></span>
+	</div>
+	<script>
+		if ('#status#' == '1' || '#status#' == '0') {
+			if ('#chargecpu#' == '') {
+				$('#chargecpu#id#').append('<span></span>');
+			}else if ('#chargecpu#' < '#chargecpuvertinfa#') {
+				$('#chargecpu#id#').append('CPU : <span data-cmd_id="#chargecpuid#" class="history cursor" style="color: #00FF00;" >#chargecpu#%</span>');
+			}else if ('#chargecpu#' >= '#chargecpuorangede#' && '#chargecpu#' <= '#chargecpuorangea#') {
+				$('#chargecpu#id#').append('CPU : <span data-cmd_id="#chargecpuid#" class="history cursor" style="color: #FF8000;" >#chargecpu#%</span>');
+			}else if ('#chargecpu#' > '#chargecpurougesupa#' && '#chargecpurougesupa#' !== '') {
+				$('#chargecpu#id#').append('CPU : <span data-cmd_id="#chargecpuid#" class="history cursor" style="color: #FF0000;" >#chargecpu#%</span>');
+			}else {
+				$('#chargecpu#id#').append('CPU : <span data-cmd_id="#chargecpuid#" class="history cursor">#chargecpu#%</span>');
+			}
+        
+			if ('#memoire#' == '') {
+				$('#memoire#id#').append('<span></span>');
+			}else if ('#memoire#' < '#memoirevertinfa#') {
+				$('#memoire#id#').append(' - RAM : <span data-cmd_id="#memoireid#" class="history cursor" style="color: #00FF00;" >#memoire#%</span>');
+			}else if ('#memoire#' >= '#memoireorangede#' && '#memoire#' <= '#memoireorangea#') {
+				$('#memoire#id#').append(' - RAM : <span data-cmd_id="#memoireid#" class="history cursor" style="color: #FF8000;" >#memoire#%</span>');
+			}else if ('#memoire#' > '#memoirerougesupa#' && '#memoirerougesupa#' !== '') {
+				$('#memoire#id#').append(' - RAM : <span data-cmd_id="#memoireid#" class="history cursor" style="color: #FF0000;" >#memoire#%</span>');
+			}else {
+				$('#memoire#id#').append(' - RAM : <span data-cmd_id="#memoireid#" class="history cursor">#memoire#%</span>');
+			}
+		}
+    </script>
+<div class="state tooltips" data-cmd_id="#workmodeid#" style="margin-left:5px;display: #workmode_display#;">
+			<span title="Mode de fonctionnement" class="fas fa-briefcase" style="min-width:15px;"></span>
+			<span id="workmode#id#"></span>
+	</div>
+	<script>
+		if ('#status#' == '1' || '#status#' == '0') {
+			$('#workmode#id#').append('<span>#workmode#</span>');
+		}
+    </script>
+<div class="state tooltips" data-cmd_id="#cpumodelid#" style="margin-left:5px;display: #cpumodel_display#;">
+			<span title="Type de CPU" class="icon techno-pc" style="min-width:15px;"></span>
+			<span id="cpumodel#id#"></span>
+	</div>
+	<script>
+		if ('#status#' == '1' || '#status#' == '0') {
+			$('#cpumodel#id#').append('<span>#cpumodel#</span>');
+		}
+    </script>
+</div>
