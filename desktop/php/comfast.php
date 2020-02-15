@@ -15,7 +15,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
                 <center>
                     <i class="fa fa-plus-circle" style="font-size : 6em;color:#94ca02;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#94ca02"><center>Ajouter</center></span>
+                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#94ca02"><center>{{Ajouter}}</center></span>
             </div>
             <div class="cursor eqLogicAction" data-action="gotoPluginConf" style="background-color : #ffffff; height : 120px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>
@@ -30,12 +30,13 @@ $eqLogics = eqLogic::byType($plugin->getId());
               <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Santé}}</center></span>
             </div>
         </div>
-        <legend>{{Mes routeurs Tenda}}
+  </br>
+        <legend>{{Mes répéteurs Comfast}}
         </legend>
         <div class="eqLogicThumbnailContainer">
             <?php
             if (count($eqLogics) == 0) {
-                echo "<br/><br/><br/><center><span style='color:#767676;font-size:1.2em;font-weight: bold;'>{{Vous n\\'avez pas encore de routeur Tenda, cliquez sur Ajouter un équipement pour commencer}}</span></center>";
+                echo "<br/><br/><br/><center><span style='color:#767676;font-size:1.2em;font-weight: bold;'>{{Vous n'avez pas encore de répéteur Comfast, cliquez sur Ajouter pour commencer}}</span></center>";
             } else {
                 foreach ($eqLogics as $eqLogic) {
                     echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >';
@@ -75,10 +76,10 @@ $eqLogics = eqLogic::byType($plugin->getId());
               </legend>
 
               <div class="form-group">
-                <label class="col-sm-3 control-label">{{Nom du routeur Tenda}}</label>
+                <label class="col-sm-3 control-label">{{Nom du répéteur Comfast}}</label>
                 <div class="col-sm-7">
                   <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
-                  <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom du routeur Tenda}}"/>
+                  <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom du répéteur Comfast}}"/>
                 </div>
               </div>
               <div class="form-group">
@@ -118,7 +119,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
                 <legend>{{Configuration}}
                 </legend>
                 <a class="btn btn-default" id="bt_goWebpage" title='{{Accéder à la page web}}'><i class="fa fa-cogs"></i></a>
-                <label class="col-sm-4 control-label">{{IP du routeur Tenda}}</label>
+                <label class="col-sm-4 control-label">{{IP du répéteur Comfast}}</label>
                 <div class="col-sm-7">
                   <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="ip"/>
                 </div>
@@ -126,10 +127,10 @@ $eqLogics = eqLogic::byType($plugin->getId());
 
 
               <div class="form-group">
-                <label class="col-sm-4 control-label">{{Mot de passe du routeur Tenda}}
+                <label class="col-sm-4 control-label">{{Mot de passe du répéteur Comfast}}
                   <sup>
-                    <i class="fa fa-question-circle tooltips" title="Saisissez le mot de passe d'accès au routeur.
-Laisse le champ vide si vous n'avez pas de mot de passe." style="font-size : 1em;color:grey;"></i>
+                    <i class="fa fa-question-circle tooltips" title="{{Saisissez le mot de passe d'accès au répéteur.
+Laisse le champ vide si vous n'avez pas de mot de passe.}}" style="font-size : 1em;color:grey;"></i>
                   </sup>
                 </label>
                 <div class="col-sm-7">
@@ -141,8 +142,8 @@ Laisse le champ vide si vous n'avez pas de mot de passe." style="font-size : 1em
 			<div class="form-group">
                 <label class="col-sm-4 control-label">{{Rafraîchissement des informations}}
                 	<sup>
-                    <i class="fa fa-question-circle tooltips" title="Réception des informations à intervalle selectionné.
-  La commande est envoyée toutes les minutes, 5 minutes, 10 minutes, 15 minutes, 30 minutes..." style="font-size : 1em;color:grey;"></i>
+                    <i class="fa fa-question-circle tooltips" title="{{Réception des informations à intervalle selectionné.
+  La commande est envoyée toutes les minutes, 5 minutes, 10 minutes, 15 minutes, 30 minutes...}}" style="font-size : 1em;color:grey;"></i>
                 	</sup>
                	</label>
                	<div class="col-sm-7">
@@ -168,12 +169,12 @@ Laisse le champ vide si vous n'avez pas de mot de passe." style="font-size : 1em
             <div class="form-group">
               <label class="col-xs-12"><i class="fas fa-tape"></i> {{Sauvegardes disponibles}}</label>
               <div class="col-xs-12">
-                <select class="form-control" id="sel_restoreBackupTenda">
+                <select class="form-control" id="sel_restoreBackupComfast">
                   <option value="">{{Aucune}}</option>
                   <?php
                   $path = '/var/www/html/';
                   $directory = 'plugins/comfast/data/backup/';
-                  $scanned_directory = preg_grep('~\.(cfg)$~',(scandir($directory)));
+                  $scanned_directory = preg_grep('~\.(file)$~',(scandir($directory)));
                   foreach ($scanned_directory as $key => $info) {
                     echo '<option value="' . $path . $directory . $info . '">' . $info . '</option>';
                   }
@@ -184,36 +185,35 @@ Laisse le champ vide si vous n'avez pas de mot de passe." style="font-size : 1em
 
             <div class="form-group">
               <div class="col-sm-6 col-xs-12">
-                <a class="btn btn-danger" id="bt_removeBackupTenda" style="width:100%;"><i class="far fa-trash-alt"></i> {{Supprimer la sauvegarde}}</a>
+                <a class="btn btn-danger" id="bt_removeBackupComfast" style="width:100%;"><i class="far fa-trash-alt"></i> {{Supprimer la sauvegarde}}</a>
               </div>
               <div class="col-sm-6 col-xs-12">
-                <a class="btn btn-warning" id="bt_restoreBackupTenda" style="width:100%;"><i class="fas fa-sync fa-spin" style="display:none;"></i> <i class="far fa-file"></i> {{Restaurer la sauvegarde}}</a>
+                <a class="btn btn-warning" id="bt_restoreBackupComfast" style="width:100%;"><i class="fas fa-sync fa-spin" style="display:none;"></i> <i class="far fa-file"></i> {{Restaurer la sauvegarde}}</a>
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-6 col-xs-12">
-                <a class="btn btn-success" id="bt_downloadBackupTenda" style="width:100%;"><i class="fas fa-cloud-download-alt"></i> {{Télécharger la sauvegarde}}</a>
+                <a class="btn btn-success" id="bt_downloadBackupComfast" style="width:100%;"><i class="fas fa-cloud-download-alt"></i> {{Télécharger la sauvegarde}}</a>
               </div>
               <div class="col-sm-6 col-xs-12">
-                <a class="btn btn-default" id="bt_createBackupTenda" style="width:100%;"><i class="fas fa-cloud-upload-alt"></i> {{Lancer la sauvegarde}}</a>
+                <a class="btn btn-default" id="bt_createBackupComfast" style="width:100%;"><i class="fas fa-cloud-upload-alt"></i> {{Lancer la sauvegarde}}</a>
               </div>
             </div>
           </fieldset>
         </form>
       </div>
     </div>
-
         <div role="tabpanel" class="tab-pane" id="commandtab">
           <table id="table_cmd" class="table table-bordered table-condensed">
             <thead>
               <tr>
-                <th style="width: 50px;">#</th>
-                <th style="width: 230px;">{{Nom}}</th>
-                <th style="width: 110px;">{{Sous-Type}}</th>
+                <th>#</th>
+                <th>{{Nom}}</th>
+                <th style="width: 100px;">{{Sous-Type}}</th>
                 <th>{{Valeur}}</th>
-                <th style="width: 50px;">{{Unité}}</th>
-                <th style="width: 100px;">{{Paramètres}}</th>
-                <th style="width: 150px;"></th>
+                <th>{{Unité}}</th>
+				<th>{{Colorisation des valeurs}}</th>
+                <th>{{Paramètres}}</th>
               </tr>
             </thead>
             <tbody>

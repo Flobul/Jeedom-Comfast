@@ -19,11 +19,10 @@ function addCmdToTable(_cmd) {
         tr += '<input class="cmdAttr form-control input-sm" data-l1key="name" style="width : 140px;" placeholder="{{Nom}}"></td>';
         tr += '<td class="expertModeVisible">';
         tr += '<input class="cmdAttr form-control type input-sm" data-l1key="type" value="action" disabled style="margin-bottom : 5px;" />';
-        tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
         tr += '</td>';
 
         tr += '<td>';
-        tr += '<input class="cmdAttr" id="'+ _cmd.id +'value" style="width : 200px; font-style: italic;" readonly="true" value="">';
+        tr += '<input class="cmdAttr" id="'+ _cmd.id +'value" style="width : 180px; font-style: italic;" readonly="true" value="">';
         $('#'+_cmd.id +'value').val("loading");
         jeedom.cmd.execute({
             id: _cmd.id,
@@ -34,19 +33,19 @@ function addCmdToTable(_cmd) {
             }
           });
         tr += '</td>';
-
         tr += '<td>';
-        if (init(_cmd.logicalId) == 'nbimpulsionminute') {
-            tr += '<textarea class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="calcul" style="height : 33px;" placeholder="{{Calcul}}"></textarea> (utiliser #brut# dans la formule)';
-        }
-
-        tr += '</td>';
+        if (init(_cmd.unite) !== '') {
+			tr += '<input readonly="true" class="cmdAttr form-control input-sm" style="width:50px" data-l1key="unite" value="">';
+        }   
+	tr += '</td>';
         tr += '<td>';
-        tr += '<input type=hidden class="cmdAttr form-control input-sm" data-l1key="unite" value="">';
-        tr += '<input class="tooltips cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="minValue" placeholder="{{Min}}" title="{{Min}}" style="width : 50%;display : none;"> ';
-        tr += '<input class="tooltips cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="maxValue" placeholder="{{Max}}" title="{{Max}}" style="width : 50%;display : none;">';
-        tr += '<span><input type="checkbox" class="cmdAttr" data-l1key="isHistorized"/> {{Historiser}}<br/></span>';
-        tr += '<span><input type="checkbox" class="cmdAttr" data-l1key="isVisible" checked/> {{Afficher}}<br/></span>';
+if (_cmd.logicalId == 'chargecpu' || _cmd.logicalId == 'memoire') {
+		tr += '<span style="color: green" >{{Vert inférieur à }}<input class="cmdAttr eqLogicAttr form-control" data-l1key="configuration" data-l2key="' + init(_cmd.logicalId) + 'vertinfa" type="text" style="width: 60px;display: inherit" > - <span style="color: orange" >{{Orange entre }}<input class="cmdAttr eqLogicAttr form-control" data-l1key="configuration" data-l2key="' + init(_cmd.logicalId) + 'orangede" style="width: 60px;display: inherit" >{{ et }}<input class="cmdAttr eqLogicAttr form-control" data-l1key="configuration" data-l2key="' + init(_cmd.logicalId) + 'orangea" style="width: 60px;display: inherit"></span> - <span style="color: red" >{{Rouge sup à }}<input class="cmdAttr eqLogicAttr form-control" data-l1key="configuration" data-l2key="' + init(_cmd.logicalId) + 'rougesupa" style="width: 60px;display: inherit" ></span>';
+	}  
+      tr += '</td>';
+        tr += '<td>';
+        tr += '<span><input type="checkbox" class="cmdAttr" data-l1key="isHistorized"/>{{Historiser}}<br/></span>';
+        tr += '<span><input type="checkbox" class="cmdAttr" data-l1key="isVisible" checked/>{{Afficher}}<br/></span>';
         tr += '</td>';
         tr += '<td>';
         if (is_numeric(_cmd.id)) {
@@ -70,16 +69,13 @@ function addCmdToTable(_cmd) {
         tr += '</td>';
         tr += '<td>';
         tr += '<input class="cmdAttr form-control type input-sm" data-l1key="type" value="action" disabled style="margin-bottom : 5px;" />';
-        tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
         tr += '<input class="cmdAttr" data-l1key="configuration" data-l2key="virtualAction" value="1" style="display:none;" >';
         tr += '</td>';
-        tr += '<td>';
-        tr += '</td>';
+        tr += '<td></td>';
+        tr += '<td></td>';
         tr += '<td></td>';
         tr += '<td>';
         tr += '<span><input type="checkbox" class="cmdAttr" data-l1key="isVisible" checked/> {{Afficher}}<br/></span>';
-        tr += '<input class="tooltips cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="minValue" placeholder="{{Min}}" title="{{Min}}" style="width : 50%;display : none;">';
-        tr += '<input class="tooltips cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="maxValue" placeholder="{{Max}}" title="{{Max}}" style="width : 50%;display : none;">';
         tr += '</td>';
         tr += '<td>';
         if (is_numeric(_cmd.id)) {
@@ -111,22 +107,22 @@ function addCmdToTable(_cmd) {
 }
 
 $('#bt_healthcomfast').on('click', function () {
-  $('#md_modal').dialog({title: "{{Santé Tenda AC}}"});
+  $('#md_modal').dialog({title: "{{Santé Comfast}}"});
   $('#md_modal').load('index.php?v=d&plugin=comfast&modal=health').dialog('open');
 });
 
 $('#bt_goWebpage').on('click', function() {
-    $('#md_modal').dialog({title: "{{Accéder à l'interface du routeur}}"});
+    $('#md_modal').dialog({title: "{{Accéder à l'interface du répéteur}}"});
     window.open('http://'+$('.eqLogicAttr[data-l2key=ip]').value()+'/');
 });
 
-$('#bt_downloadBackupTenda').on('click', function() {
+$('#bt_downloadBackupComfast').on('click', function() {
     $('#md_modal').dialog({title: "{{Télécharger la sauvegarde}}"});
-      if($('#sel_restoreBackupTenda').value() != ''){
-        window.open('core/php/downloadFile.php?pathfile='+$('#sel_restoreBackupTenda').value());
+      if($('#sel_restoreBackupComfast').value() != ''){
+        window.open('core/php/downloadFile.php?pathfile='+$('#sel_restoreBackupComfast').value());
       }
 });
-$('#bt_createBackupTenda').off().on('click', function () {
+$('#bt_createBackupComfast').off().on('click', function () {
      bootbox.confirm('{{Êtes-vous sûr de vouloir créer un backup ? Une fois lancée cette opération ne peut être annulée.}}',
          function (result) {
              if (result) {
@@ -143,7 +139,7 @@ $('#bt_createBackupTenda').off().on('click', function () {
              			handleAjaxError(request, status, error);
              		},
              		success: function (data) {
-             			$('#div_alert').showAlert({message: 'Backup effectué avec succès !', level: 'success'});
+             			$('#div_alert').showAlert({message: '{{Backup effectué avec succès !}}', level: 'success'});
                        // fonction pour mettre à jour la liste
              		}
              	});
@@ -166,17 +162,17 @@ function checkRemoveFile(url) {
 			handleAjaxError(request, status, error);
 		},
 		success: function (data) {
-			$('#div_alert').showAlert({message: 'Fichier de configuration supprimé avec succès !', level: 'success'});
+			$('#div_alert').showAlert({message: '{{Fichier de configuration supprimé avec succès !}}', level: 'success'});
           // fonction pour mettre à jour la liste
 		}
 	});
 }
 
-$('#bt_removeBackupTenda').on('click', function() {
-  var url = $('#sel_restoreBackupTenda option:selected').text();
+$('#bt_removeBackupComfast').on('click', function() {
+  var url = $('#sel_restoreBackupComfast option:selected').text();
   $('#md_modal').dialog({title: "{{Supprimer la sauvegarde}}"});
-  if($('#sel_restoreBackupTenda').value() != ''){
-    bootbox.confirm('{{Êtes-vous sûr de vouloir supprimer la sauvegarde suivante :}} <b>' + $('#sel_restoreBackupTenda option:selected').text() + '</b> ?<br/>{{Une fois lancée, cette opération ne peut être annulée.}}',
+  if($('#sel_restoreBackupComfast').value() != ''){
+    bootbox.confirm('{{Êtes-vous sûr de vouloir supprimer la sauvegarde suivante :}} <b>' + $('#sel_restoreBackupComfast option:selected').text() + '</b> ?<br/>{{Une fois lancée, cette opération ne peut être annulée.}}',
     function (result) {
       if (result) {
         $('#div_alert').showAlert({message: url, level: 'danger'});
