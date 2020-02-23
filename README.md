@@ -1,5 +1,3 @@
-[![Coverage Status](https://coveralls.io/repos/github/Flobul/Jeedom-Comfast/badge.svg?branch=master)](https://coveralls.io/github/Flobul/Jeedom-Comfast?branch=master)
-
 # Plugin routeur Tenda AC pour Jeedom
 
 <img src="docs/images/comfast_icon.png" align="right" height="160" width="150">
