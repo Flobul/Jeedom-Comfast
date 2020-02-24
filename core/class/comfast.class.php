@@ -729,10 +729,15 @@ class comfast extends eqLogic {
 				$memoire = $this->getCmd(null, 'memoire');
 				$memoire->setCollectDate('');
 				$memoire->event(str_replace("%", "",$arr2[memory][usage]));
-              
+
+				if (str_replace("%", "", $arr2[cpu_usage][cpu_used]) < '10'){
+					$cpu_usage = '0'.$arr2[cpu_usage][cpu_used];
+				} else {
+					$cpu_usage = $arr2[cpu_usage][cpu_used];
+				}
 				$chargecpu = $this->getCmd(null, 'chargecpu');
 				$chargecpu->setCollectDate('');
-              	$chargecpu->event(str_replace("%", "",$arr2[cpu_usage][cpu_used]));
+				$chargecpu->event(str_replace("%", "",$cpu_usage);
 
 				$routername = $this->getCmd(null, 'routername');
 				$routername->setCollectDate('');
