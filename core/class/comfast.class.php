@@ -335,7 +335,7 @@ class comfast extends eqLogic {
 				CURLOPT_ENCODING => "",
 				CURLOPT_MAXREDIRS => 10,
 				CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 				CURLOPT_CUSTOMREQUEST => "POST",
 				CURLOPT_POSTFIELDS =>"{}",
@@ -687,14 +687,14 @@ class comfast extends eqLogic {
 				$arr5 = json_decode($guide_config, true);
 
 				if (isset($arr1[firmware][uptime])) {
-                  $format_time = $this->transforme($arr1[firmware][uptime]);
-                }
+					$format_time = $this->transforme($arr1[firmware][uptime]);
+				}
 				log::add('comfast','debug',__('Format time : ',__FILE__).$format_time);
               
-                $uptime = $this->getCmd(null,'uptime');
-                if(is_object($uptime)){
-                    $uptime->event($format_time);
-                }
+				$uptime = $this->getCmd(null,'uptime');
+				if(is_object($uptime)){
+					$uptime->event($format_time);
+				}
               
 				$ledstatus = $this->getCmd(null, 'ledstatus');
 				$ledstatus->setCollectDate('');
@@ -709,13 +709,13 @@ class comfast extends eqLogic {
 						break;
 					case 'router':
 						$work_mode = __("Routeur",__FILE__);
-                        break;
-                    case 'bridge':
+						break;
+					case 'bridge':
 						$work_mode = __("Passerelle",__FILE__);
-                        break;
-                    default:
+						break;
+					default:
 						$work_mode = "";
-                }
+				}
               
 				$workmode = $this->getCmd(null, 'workmode');
 				$workmode->setCollectDate('');
@@ -737,7 +737,7 @@ class comfast extends eqLogic {
 				}
 				$chargecpu = $this->getCmd(null, 'chargecpu');
 				$chargecpu->setCollectDate('');
-				$chargecpu->event(str_replace("%", "",$cpu_usage);
+				$chargecpu->event(str_replace("%", "",$cpu_usage));
 
 				$routername = $this->getCmd(null, 'routername');
 				$routername->setCollectDate('');
