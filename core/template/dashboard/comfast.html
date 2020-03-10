@@ -84,29 +84,29 @@
         
 			if ('#memoire#' == '') {
 				$('#memoire#id#').append('<span></span>');
-			}else if ('#memoire#' < '#memoirevertinfa#') {
+			}else if ((parseInt('#memoire#')) < (parseInt('#memoirevertinfa#'))) {
 				$('#memoire#id#').append(' - RAM : <span data-cmd_id="#memoireid#" class="history cursor" style="color: #00FF00;" >#memoire#%</span>');
-			}else if ('#memoire#' >= '#memoireorangede#' && '#memoire#' <= '#memoireorangea#') {
+			}else if ((parseInt('#memoire#')) >= (parseInt('#memoireorangede#')) && (parseInt('#memoire#')) <= (parseInt('#memoireorangea#'))) {
 				$('#memoire#id#').append(' - RAM : <span data-cmd_id="#memoireid#" class="history cursor" style="color: #FF8000;" >#memoire#%</span>');
-			}else if ('#memoire#' > '#memoirerougesupa#' && '#memoirerougesupa#' !== '') {
+			}else if ((parseInt('#memoire#')) > (parseInt('#memoirerougesupa#')) && (parseInt('#memoirerougesupa#')) !== '') {
 				$('#memoire#id#').append(' - RAM : <span data-cmd_id="#memoireid#" class="history cursor" style="color: #FF0000;" >#memoire#%</span>');
 			}else {
 				$('#memoire#id#').append(' - RAM : <span data-cmd_id="#memoireid#" class="history cursor">#memoire#%</span>');
 			}
 		}
     </script>
-<div class="state tooltips" data-cmd_id="#workmodeid#" style="margin-left:5px;display: #workmode_display#;">
-			<span title="Mode de fonctionnement" class="fas fa-briefcase" style="min-width:15px;"></span>
-			<span id="workmode#id#"></span>
+	<div class="state tooltips" data-cmd_id="#workmodeid#" style="margin-left:5px;display: #workmode_display#;">
+		<span title="Mode de fonctionnement" class="fas fa-briefcase" style="min-width:15px;"></span>
+		<span id="workmode#id#"></span>
 	</div>
 	<script>
 		if ('#status#' == '1' || '#status#' == '0') {
 			$('#workmode#id#').append('<span>#workmode#</span>');
 		}
     </script>
-<div class="state tooltips" data-cmd_id="#cpumodelid#" style="margin-left:5px;display: #cpumodel_display#;">
-			<span title="Type de CPU" class="icon techno-pc" style="min-width:15px;"></span>
-			<span id="cpumodel#id#"></span>
+	<div class="state tooltips" data-cmd_id="#cpumodelid#" style="margin-left:5px;display: #cpumodel_display#;">
+		<span title="Type de CPU" class="icon techno-pc" style="min-width:15px;"></span>
+		<span id="cpumodel#id#"></span>
 	</div>
 	<script>
 		if ('#status#' == '1' || '#status#' == '0') {
