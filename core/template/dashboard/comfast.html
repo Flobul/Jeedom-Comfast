@@ -72,11 +72,11 @@
 		if ('#status#' == '1' || '#status#' == '0') {
 			if ('#chargecpu#' == '') {
 				$('#chargecpu#id#').append('<span></span>');
-			}else if ('#chargecpu#' < '#chargecpuvertinfa#') {
+			}else if ((parseInt('#chargecpu#')) < (parseInt('#chargecpuvertinfa#'))) {
 				$('#chargecpu#id#').append('CPU : <span data-cmd_id="#chargecpuid#" class="history cursor" style="color: #00FF00;" >#chargecpu#%</span>');
-			}else if ('#chargecpu#' >= '#chargecpuorangede#' && '#chargecpu#' <= '#chargecpuorangea#') {
+			}else if ((parseInt('#chargecpu#')) >= (parseInt('#chargecpuorangede#')) && (parseInt('#chargecpu#')) <= (parseInt('#chargecpuorangea#'))) {
 				$('#chargecpu#id#').append('CPU : <span data-cmd_id="#chargecpuid#" class="history cursor" style="color: #FF8000;" >#chargecpu#%</span>');
-			}else if ('#chargecpu#' > '#chargecpurougesupa#' && '#chargecpurougesupa#' !== '') {
+			}else if ((parseInt('#chargecpu#')) > (parseInt('#chargecpurougesupa#')) && (parseInt('#chargecpurougesupa#')) !== '') {
 				$('#chargecpu#id#').append('CPU : <span data-cmd_id="#chargecpuid#" class="history cursor" style="color: #FF0000;" >#chargecpu#%</span>');
 			}else {
 				$('#chargecpu#id#').append('CPU : <span data-cmd_id="#chargecpuid#" class="history cursor">#chargecpu#%</span>');
