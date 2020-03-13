@@ -13,19 +13,19 @@ $eqLogics = eqLogic::byType($plugin->getId());
         <div class="eqLogicThumbnailContainer">
             <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 120px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
                 <center>
-                    <i class="fa fa-plus-circle" style="font-size : 6em;color:#94ca02;"></i>
+                    <i class="fa fa-plus-circle" style="font-size : 3em;color:#94ca02;"></i>
                 </center>
                 <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#94ca02"><center>{{Ajouter}}</center></span>
             </div>
             <div class="cursor eqLogicAction" data-action="gotoPluginConf" style="background-color : #ffffff; height : 120px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>
-                    <i class="fa fa-wrench" style="font-size : 6em;color:#767676;"></i>
+                    <i class="fa fa-wrench" style="font-size : 3em;color:#767676;"></i>
                 </center>
                 <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Configuration}}</center></span>
             </div>
             <div class="cursor" id="bt_healthcomfast" style="background-color : #ffffff; height : 120px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
               <center>
-                <i class="fas fa-medkit" style="font-size : 6em;color:#767676;"></i>
+                <i class="fas fa-medkit" style="font-size : 3em;color:#767676;"></i>
               </center>
               <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Santé}}</center></span>
             </div>
@@ -138,8 +138,7 @@ Laisse le champ vide si vous n'avez pas de mot de passe.}}" style="font-size : 1
                 </div>
                 </div>
 
-
-			<div class="form-group">
+		<div class="form-group">
                 <label class="col-sm-4 control-label">{{Rafraîchissement des informations}}
                 	<sup>
                     <i class="fa fa-question-circle tooltips" title="{{Réception des informations à intervalle selectionné.
@@ -147,25 +146,25 @@ Laisse le champ vide si vous n'avez pas de mot de passe.}}" style="font-size : 1
                 	</sup>
                	</label>
                	<div class="col-sm-7">
-					<select class="eqLogicAttr form-control input-sm" data-l1key="configuration" data-l2key="RepeatCmd">
-						<option value="">{{Non}}</option>
-						<option value="cron">{{Toutes les minutes}}</option>
-						<option value="cron5">{{Toutes les 5 minutes}}</option>
-						<option value="cron10">{{Toutes les 10 minutes}}</option>
-						<option value="cron15">{{Toutes les 15 minutes}}</option>
-						<option value="cron30">{{Toutes les 30 minutes}}</option>
-						<option value="cronHourly">{{Toutes les heures}}</option>
-					</select>
-        </div>
-      </div>
-			</fieldset>
-			</form>
+			<select class="eqLogicAttr form-control input-sm" data-l1key="configuration" data-l2key="RepeatCmd">
+				<option value="">{{Non}}</option>
+				<option value="cron">{{Toutes les minutes}}</option>
+				<option value="cron5">{{Toutes les 5 minutes}}</option>
+				<option value="cron10">{{Toutes les 10 minutes}}</option>
+				<option value="cron15">{{Toutes les 15 minutes}}</option>
+				<option value="cron30">{{Toutes les 30 minutes}}</option>
+				<option value="cronHourly">{{Toutes les heures}}</option>
+			</select>
+        	</div>
+      	</div>
+		</fieldset>
+		</form>
 		</div>
 
 		<div class="col-lg-6">
-			<form class="form-horizontal">
-				<legend>{{Sauvegardes}}</legend>
-					<fieldset>
+		<form class="form-horizontal">
+			<legend>{{Sauvegardes}}</legend>
+			<fieldset>
             <div class="form-group">
               <label class="col-xs-12"><i class="fas fa-tape"></i> {{Sauvegardes disponibles}}</label>
               <div class="col-xs-12">
@@ -212,7 +211,7 @@ Laisse le champ vide si vous n'avez pas de mot de passe.}}" style="font-size : 1
                 <th style="width: 100px;">{{Sous-Type}}</th>
                 <th>{{Valeur}}</th>
                 <th>{{Unité}}</th>
-				<th>{{Colorisation des valeurs}}</th>
+		<th>{{Colorisation des valeurs}}</th>
                 <th>{{Paramètres}}</th>
               </tr>
             </thead>
