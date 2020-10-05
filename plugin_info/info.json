@@ -6,11 +6,16 @@
     "require" : "3.0",
     "category" : "communication",
     "description" : "Plugin permettant de gérer les répéteurs Comfast",
+	"utilization" : "Voir la documentation du plugin https://flobul.github.io/Comfast/fr_FR/ ",
     "hasDependency" : false,
     "hasOwnDeamon" : false,
     "maxDependancyInstallTime" : 0,
     "changelog" : "https://flobul.github.io/Comfast/#language#/changelog",
     "documentation" : "https://flobul.github.io/Comfast/#language#/",
     "language" : ["fr_FR","en_US","es_ES"],
-    "compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"]
+    "compatibility" : ["miniplus","smart","rpi","docker","diy","mobile","v4"],
+    "forum_link" : "",
+	"link" : {
+		"forum" : ""
+	}
 }
